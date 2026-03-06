@@ -1,834 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Best Landscaping Company | Tino's Landscape Lighting & Construction</title>
-  <meta name="description" content="Professional landscaping, outdoor lighting, patios, and backyard design. Call Tino's Landscape, Lighting & Construction today for a free estimate.">
-  <meta name="keywords" content="landscaping services, landscape lighting, patio installation, backyard landscaping, landscape design near me">
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <style>
-    * {
-      font-family: 'Inter', sans-serif;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #059669;
-      border-radius: 5px;
-    }
-    
-    /* Animations */
-    .fade-in-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease-out;
-    }
-    
-    .fade-in-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .stagger-1 { transition-delay: 0.1s; }
-    .stagger-2 { transition-delay: 0.2s; }
-    .stagger-3 { transition-delay: 0.3s; }
-    .stagger-4 { transition-delay: 0.4s; }
-    
-    /* Hover effects */
-    .service-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-    }
-    
-    .gallery-item {
-      overflow: hidden;
-    }
-    .gallery-item img {
-      transition: transform 0.7s ease;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-    .gallery-overlay {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-    
-    /* Button animations */
-    .btn-primary {
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.4);
-    }
-    .btn-primary:active {
-      transform: scale(0.98);
-    }
-    
-    /* Mobile menu */
-    .mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-    }
-    .mobile-menu.open {
-      max-height: 400px;
-    }
-    
-    /* Form focus states */
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: #059669;
-      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
-    }
-    
-    /* Scroll indicator animation */
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
-    }
-    .scroll-indicator {
-      animation: bounce 2s infinite;
-    }
-    
-    /* Star rating */
-    .star-filled {
-      color: #facc15;
-      fill: #facc15;
-    }
-    
-    /* Gradient text */
-    .gradient-text {
-      background: linear-gradient(135deg, #34d399 0%, #059669 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tino's Landscape Lighting & Construction</title>
+
+<meta name="description" content="Professional landscaping, patios, lighting and outdoor construction. Free estimates available.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+font-family:Inter,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+.fade-in{
+opacity:0;
+transform:translateY(30px);
+transition:.6s;
+}
+
+.fade-in.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+
 </head>
-<body class="bg-stone-50 text-gray-900 antialiased">
 
-  <!-- Navigation -->
-  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-5">
-    <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <div class="w-10 h-10 bg-emerald-700 rounded-lg flex items-center justify-center text-white">
-          <i data-lucide="leaf" class="w-6 h-6"></i>
-        </div>
-        <div class="font-bold text-xl tracking-tight text-white" id="nav-logo">Tino's Landscape</div>
-      </div>
+<body class="bg-stone-50 text-gray-900">
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="#services" class="text-sm font-medium text-white/90 hover:text-white transition-colors">Services</a>
-        <a href="#gallery" class="text-sm font-medium text-white/90 hover:text-white transition-colors">Gallery</a>
-        <a href="#reviews" class="text-sm font-medium text-white/90 hover:text-white transition-colors">Reviews</a>
-        <a href="#contact" class="text-sm font-medium text-white/90 hover:text-white transition-colors">Contact</a>
-        <a href="tel:+18329713287">
-          <button class="bg-white text-emerald-900 hover:bg-gray-100 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg transition-all">
-            <i data-lucide="phone" class="w-4 h-4"></i> Call Now
-          </button>
-        </a>
-      </nav>
 
-      <!-- Mobile Menu Toggle -->
-      <button id="menu-toggle" class="md:hidden text-white">
-        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
-      </button>
-    </div>
+<!-- NAV -->
 
-    <!-- Mobile Nav Dropdown -->
-    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
-      <div class="flex flex-col p-4 gap-4">
-        <a href="#services" class="text-lg font-medium text-gray-800 py-2 border-b border-gray-100" onclick="closeMenu()">Services</a>
-        <a href="#gallery" class="text-lg font-medium text-gray-800 py-2 border-b border-gray-100" onclick="closeMenu()">Gallery</a>
-        <a href="#reviews" class="text-lg font-medium text-gray-800 py-2 border-b border-gray-100" onclick="closeMenu()">Reviews</a>
-        <a href="#contact" class="text-lg font-medium text-gray-800 py-2 border-b border-gray-100" onclick="closeMenu()">Contact</a>
-        <a href="tel:+18329713287" class="w-full">
-          <button class="w-full bg-emerald-700 text-white py-3 rounded-full font-medium flex items-center justify-center gap-2">
-            <i data-lucide="phone" class="w-5 h-5"></i> Call Now
-          </button>
-        </a>
-      </div>
-    </div>
-  </header>
+<header class="fixed top-0 left-0 right-0 z-50 bg-emerald-900 text-white">
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <!-- Background Image with Overlay -->
-    <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1558905540-21290109218f?q=80&w=2070&auto=format&fit=crop" alt="Beautiful landscaped backyard" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-emerald-950/90"></div>
-    </div>
+<div class="max-w-6xl mx-auto flex items-center justify-between p-4">
 
-    <div class="container mx-auto px-4 relative z-10 pt-20">
-      <div class="max-w-3xl mx-auto text-center text-white">
-        <div class="fade-in-up inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
-          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-          <span class="text-sm font-medium">4.7 Stars • 105+ Happy Customers</span>
-        </div>
-        
-        <h1 class="fade-in-up stagger-1 text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-          Transform Your Outdoor Space Into Something <span class="text-emerald-400">Incredible</span>
-        </h1>
-        
-        <p class="fade-in-up stagger-2 text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
-          Professional Landscaping, Outdoor Lighting, and Custom Outdoor Construction services in your area. We bring your dream backyard to life.
-        </p>
-        
-        <div class="fade-in-up stagger-3 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:+18329713287">
-            <button class="btn-primary bg-white text-emerald-900 px-8 py-4 rounded-full text-lg font-semibold flex items-center justify-center gap-2 w-full sm:w-auto">
-              <i data-lucide="phone" class="w-5 h-5"></i> Call Now
-            </button>
-          </a>
-          <a href="#contact">
-            <button class="btn-primary bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-semibold w-full sm:w-auto">
-              Get Free Estimate
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
+<div class="flex items-center gap-2 font-bold text-xl">
+<i data-lucide="leaf"></i>
+Tino's Landscape
+</div>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50">
-      <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-        <div class="w-1 h-2 bg-white rounded-full"></div>
-      </div>
-    </div>
-  </section>
+<nav class="hidden md:flex gap-6 text-sm">
 
-  <!-- Trust Bar -->
-  <section class="bg-emerald-900 py-12 text-white">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div class="fade-in-up flex flex-col items-center gap-3">
-          <div class="w-12 h-12 bg-emerald-800 rounded-full flex items-center justify-center">
-            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold">4.7 Star Rating</h3>
-            <p class="text-emerald-200 text-sm">Based on 105+ Reviews</p>
-          </div>
-        </div>
-        <div class="fade-in-up stagger-1 flex flex-col items-center gap-3">
-          <div class="w-12 h-12 bg-emerald-800 rounded-full flex items-center justify-center">
-            <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold">Locally Trusted</h3>
-            <p class="text-emerald-200 text-sm">Serving the Community for Years</p>
-          </div>
-        </div>
-        <div class="fade-in-up stagger-2 flex flex-col items-center gap-3">
-          <div class="w-12 h-12 bg-emerald-800 rounded-full flex items-center justify-center">
-            <i data-lucide="clock" class="w-6 h-6 text-emerald-400"></i>
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold">Open 24 Hours</h3>
-            <p class="text-emerald-200 text-sm">Always Available for Emergencies</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
 
-  <!-- Services Section -->
-  <section id="services" class="py-20 md:py-32 bg-stone-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <span class="fade-in-up text-emerald-600 font-semibold tracking-wider uppercase text-sm mb-2 block">What We Do Best</span>
-        <h2 class="fade-in-up stagger-1 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Our Premium Services</h2>
-        <div class="fade-in-up stagger-2 h-1.5 w-24 bg-emerald-500 mt-4 rounded-full mx-auto"></div>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service Card 1 -->
-        <div class="service-card fade-in-up bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col items-start h-full">
-          <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 mb-6">
-            <i data-lucide="trees" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Landscape Design</h3>
-          <p class="text-gray-600 leading-relaxed mb-6 flex-grow">Custom landscape architecture tailored to your property's unique features and your personal style.</p>
-          <button class="text-emerald-700 font-semibold flex items-center gap-2 hover:gap-3 transition-all" onclick="scrollToContact()">
-            Get Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
+<a href="tel:+18329713287"
+class="bg-white text-emerald-900 px-4 py-2 rounded-full font-semibold">
+Call Now
+</a>
 
-        <!-- Service Card 2 -->
-        <div class="service-card fade-in-up stagger-1 bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col items-start h-full">
-          <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 mb-6">
-            <i data-lucide="shovel" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Paver & Patio Installation</h3>
-          <p class="text-gray-600 leading-relaxed mb-6 flex-grow">Durable, beautiful hardscaping solutions including patios, driveways, and walkways.</p>
-          <button class="text-emerald-700 font-semibold flex items-center gap-2 hover:gap-3 transition-all" onclick="scrollToContact()">
-            Get Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
+</nav>
 
-        <!-- Service Card 3 -->
-        <div class="service-card fade-in-up stagger-2 bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col items-start h-full">
-          <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 mb-6">
-            <i data-lucide="sun" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Outdoor Lighting</h3>
-          <p class="text-gray-600 leading-relaxed mb-6 flex-grow">Enhance security and ambiance with professionally installed outdoor lighting systems.</p>
-          <button class="text-emerald-700 font-semibold flex items-center gap-2 hover:gap-3 transition-all" onclick="scrollToContact()">
-            Get Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
+<button id="menuBtn" class="md:hidden">
+<i data-lucide="menu"></i>
+</button>
 
-        <!-- Service Card 4 -->
-        <div class="service-card fade-in-up bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col items-start h-full">
-          <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 mb-6">
-            <i data-lucide="leaf" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Backyard Landscaping</h3>
-          <p class="text-gray-600 leading-relaxed mb-6 flex-grow">Complete backyard transformations from sod installation to garden beds and water features.</p>
-          <button class="text-emerald-700 font-semibold flex items-center gap-2 hover:gap-3 transition-all" onclick="scrollToContact()">
-            Get Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
+</div>
 
-        <!-- Service Card 5 -->
-        <div class="service-card fade-in-up stagger-1 bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col items-start h-full">
-          <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 mb-6">
-            <i data-lucide="fence" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Stone Work & Walkways</h3>
-          <p class="text-gray-600 leading-relaxed mb-6 flex-grow">Elegant stone pathways, retaining walls, and decorative rock installations.</p>
-          <button class="text-emerald-700 font-semibold flex items-center gap-2 hover:gap-3 transition-all" onclick="scrollToContact()">
-            Get Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
+<div id="mobileMenu" class="hidden bg-white text-gray-900">
 
-        <!-- Service Card 6 -->
-        <div class="service-card fade-in-up stagger-2 bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col items-start h-full">
-          <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 mb-6">
-            <i data-lucide="hammer" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Outdoor Construction</h3>
-          <p class="text-gray-600 leading-relaxed mb-6 flex-grow">Pergolas, decks, outdoor kitchens, and custom structures to extend your living space.</p>
-          <button class="text-emerald-700 font-semibold flex items-center gap-2 hover:gap-3 transition-all" onclick="scrollToContact()">
-            Get Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="flex flex-col p-4 gap-4">
 
-  <!-- Why Choose Us Section -->
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col lg:flex-row items-center gap-16">
-        <div class="lg:w-1/2">
-          <div class="relative">
-            <div class="absolute -top-4 -left-4 w-24 h-24 bg-emerald-100 rounded-full -z-10"></div>
-            <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-100 rounded-full -z-10"></div>
-            <img src="https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop" alt="Landscaper working" class="rounded-2xl shadow-2xl w-full object-cover h-[500px]">
-            <div class="absolute bottom-8 left-8 bg-white p-6 rounded-xl shadow-xl">
-              <div class="flex items-center gap-4">
-                <div class="text-4xl font-bold text-emerald-600">15+</div>
-                <div class="text-sm font-medium text-gray-600 leading-tight">Years of<br>Experience</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:w-1/2">
-          <span class="text-emerald-600 font-semibold tracking-wider uppercase text-sm mb-2 block">The Tino's Difference</span>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Homeowners Choose Tino's</h2>
-          <div class="h-1.5 w-24 bg-emerald-500 mb-8 rounded-full"></div>
-          
-          <div class="space-y-6">
-            <div class="flex gap-4 fade-in-up">
-              <div class="mt-1">
-                <i data-lucide="check-circle" class="w-6 h-6 text-emerald-600"></i>
-              </div>
-              <div>
-                <h4 class="text-xl font-bold text-gray-900 mb-1">Experienced Team</h4>
-                <p class="text-gray-600">Our crew has decades of combined experience in landscape architecture.</p>
-              </div>
-            </div>
-            <div class="flex gap-4 fade-in-up stagger-1">
-              <div class="mt-1">
-                <i data-lucide="check-circle" class="w-6 h-6 text-emerald-600"></i>
-              </div>
-              <div>
-                <h4 class="text-xl font-bold text-gray-900 mb-1">Premium Materials</h4>
-                <p class="text-gray-600">We only use high-quality, durable materials that last for years.</p>
-              </div>
-            </div>
-            <div class="flex gap-4 fade-in-up stagger-2">
-              <div class="mt-1">
-                <i data-lucide="check-circle" class="w-6 h-6 text-emerald-600"></i>
-              </div>
-              <div>
-                <h4 class="text-xl font-bold text-gray-900 mb-1">Fast Completion</h4>
-                <p class="text-gray-600">We respect your time and complete projects efficiently without cutting corners.</p>
-              </div>
-            </div>
-            <div class="flex gap-4 fade-in-up stagger-3">
-              <div class="mt-1">
-                <i data-lucide="check-circle" class="w-6 h-6 text-emerald-600"></i>
-              </div>
-              <div>
-                <h4 class="text-xl font-bold text-gray-900 mb-1">Attention to Detail</h4>
-                <p class="text-gray-600">Every blade of grass matters. We obsess over the small details.</p>
-              </div>
-            </div>
-          </div>
-          <div class="mt-10">
-            <a href="#contact">
-              <button class="btn-primary bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-4 rounded-full text-lg font-semibold">
-                Start Your Project
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="py-20 bg-stone-100">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <span class="fade-in-up text-emerald-600 font-semibold tracking-wider uppercase text-sm mb-2 block">Portfolio</span>
-        <h2 class="fade-in-up stagger-1 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Our Recent Projects</h2>
-        <div class="fade-in-up stagger-2 h-1.5 w-24 bg-emerald-500 mt-4 rounded-full mx-auto"></div>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[300px]">
-        <div class="gallery-item fade-in-up relative rounded-xl cursor-pointer md:col-span-2">
-          <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?q=80&w=2069&auto=format&fit=crop" alt="Landscaping project 1" class="w-full h-full object-cover rounded-xl">
-          <div class="gallery-overlay absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center">
-            <span class="text-white font-bold text-lg border-2 border-white px-6 py-2 rounded-full">View Project</span>
-          </div>
-        </div>
-        <div class="gallery-item fade-in-up stagger-1 relative rounded-xl cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" alt="Landscaping project 2" class="w-full h-full object-cover rounded-xl">
-          <div class="gallery-overlay absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center">
-            <span class="text-white font-bold text-lg border-2 border-white px-6 py-2 rounded-full">View Project</span>
-          </div>
-        </div>
-        <div class="gallery-item fade-in-up relative rounded-xl cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" alt="Landscaping project 3" class="w-full h-full object-cover rounded-xl">
-          <div class="gallery-overlay absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center">
-            <span class="text-white font-bold text-lg border-2 border-white px-6 py-2 rounded-full">View Project</span>
-          </div>
-        </div>
-        <div class="gallery-item fade-in-up stagger-1 relative rounded-xl cursor-pointer md:col-span-2">
-          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop" alt="Landscaping project 4" class="w-full h-full object-cover rounded-xl">
-          <div class="gallery-overlay absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center">
-            <span class="text-white font-bold text-lg border-2 border-white px-6 py-2 rounded-full">View Project</span>
-          </div>
-        </div>
-        <div class="gallery-item fade-in-up stagger-2 relative rounded-xl cursor-pointer">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop" alt="Landscaping project 5" class="w-full h-full object-cover rounded-xl">
-          <div class="gallery-overlay absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center">
-            <span class="text-white font-bold text-lg border-2 border-white px-6 py-2 rounded-full">View Project</span>
-          </div>
-        </div>
-        <div class="gallery-item fade-in-up stagger-2 relative rounded-xl cursor-pointer md:col-span-2">
-          <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop" alt="Landscaping project 6" class="w-full h-full object-cover rounded-xl">
-          <div class="gallery-overlay absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center">
-            <span class="text-white font-bold text-lg border-2 border-white px-6 py-2 rounded-full">View Project</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+</div>
 
-  <!-- Reviews Section -->
-  <section id="reviews" class="py-20 bg-emerald-900 text-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="fade-in-up text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
-        <p class="fade-in-up stagger-1 text-emerald-200 max-w-2xl mx-auto">Don't just take our word for it. Here's what homeowners in your area are saying about Tino's Landscape.</p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Review 1 -->
-        <div class="fade-in-up bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-gray-900">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-          </div>
-          <p class="text-gray-700 italic mb-6">"I had a great experience with Tino's Landscaping from start to finish. The design and final result exceeded my expectations. Highly recommend!"</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-800 font-bold">T</div>
-            <div>
-              <h4 class="font-bold text-gray-900">Trevor</h4>
-              <span class="text-xs text-gray-500">Verified Customer</span>
-            </div>
-          </div>
-        </div>
+</div>
 
-        <!-- Review 2 -->
-        <div class="fade-in-up stagger-1 bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-gray-900">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-          </div>
-          <p class="text-gray-700 italic mb-6">"Tino's crew were amazing and completed the project quickly with incredible attention to detail. My patio looks like something out of a magazine."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-800 font-bold">M</div>
-            <div>
-              <h4 class="font-bold text-gray-900">Marty</h4>
-              <span class="text-xs text-gray-500">Verified Customer</span>
-            </div>
-          </div>
-        </div>
+</header>
 
-        <!-- Review 3 -->
-        <div class="fade-in-up stagger-2 bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-gray-900">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-          </div>
-          <p class="text-gray-700 italic mb-6">"Tino's Landscape is one of the best outfits I've had the pleasure of working with. Professional, courteous, and the quality is unmatched."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-800 font-bold">T</div>
-            <div>
-              <h4 class="font-bold text-gray-900">Thomas</h4>
-              <span class="text-xs text-gray-500">Verified Customer</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="mt-12 text-center">
-        <div class="inline-flex items-center gap-2 bg-white/10 px-6 py-3 rounded-full">
-          <span class="font-bold">4.7</span>
-          <div class="flex">
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 star-filled fill-yellow-400"></i>
-          </div>
-          <span class="text-emerald-200 text-sm">Based on 105+ Google Reviews</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Contact / Estimate Section -->
-  <section id="contact" class="py-20 md:py-32 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto bg-stone-50 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
-        <div class="lg:w-1/2 p-10 md:p-16 flex flex-col justify-center">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Get Your Free Landscaping Estimate Today</h2>
-          <p class="text-gray-600 mb-8 text-lg">Ready to transform your outdoor space? Fill out the form and our team will contact you within 24 hours to schedule a consultation.</p>
-          
-          <div class="space-y-6">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700">
-                <i data-lucide="phone" class="w-6 h-6"></i>
-              </div>
-              <div>
-                <p class="text-sm text-gray-500">Call Us Anytime</p>
-                <a href="tel:+18329713287" class="text-xl font-bold text-gray-900 hover:text-emerald-700">+1 (832) 971-3287</a>
-              </div>
-            </div>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700">
-                <i data-lucide="clock" class="w-6 h-6"></i>
-              </div>
-              <div>
-                <p class="text-sm text-gray-500">Business Hours</p>
-                <p class="text-xl font-bold text-gray-900">Open 24 Hours</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="lg:w-1/2 bg-white p-10 md:p-16">
-          <form id="contact-form" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="space-y-2">
-                <label class="text-sm font-medium text-gray-700">Name</label>
-                <input required type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 transition-all" placeholder="John Doe">
-              </div>
-              <div class="space-y-2">
-                <label class="text-sm font-medium text-gray-700">Phone</label>
-                <input required type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 transition-all" placeholder="(555) 123-4567">
-              </div>
-            </div>
-            <div class="space-y-2">
-              <label class="text-sm font-medium text-gray-700">Email</label>
-              <input required type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 transition-all" placeholder="john@example.com">
-            </div>
-            <div class="space-y-2">
-              <label class="text-sm font-medium text-gray-700">Project Type</label>
-              <select class="w-full px-4 py-3 rounded-lg border border-gray-300 transition-all">
-                <option>Landscape Design</option>
-                <option>Patio / Paver Installation</option>
-                <option>Outdoor Lighting</option>
-                <option>General Landscaping</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="space-y-2">
-              <label class="text-sm font-medium text-gray-700">Message</label>
-              <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 transition-all" placeholder="Tell us about your project..."></textarea>
-            </div>
-            <button type="submit" id="submit-btn" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-4 rounded-full transition-all flex items-center justify-center gap-2">
-              <span>Request Free Estimate</span>
-            </button>
-          </form>
-          
-          <!-- Success Message (hidden by default) -->
-          <div id="success-message" class="hidden h-full flex flex-col items-center justify-center text-center">
-            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-6">
-              <i data-lucide="check-circle" class="w-10 h-10"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">Request Received!</h3>
-            <p class="text-gray-600">Thank you for contacting Tino's Landscape. We will be in touch shortly.</p>
-            <button onclick="resetForm()" class="mt-8 text-emerald-600 font-semibold hover:underline">Send another request</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- HERO -->
 
-  <!-- Map Section -->
-  <section class="h-[400px] w-full bg-gray-200 relative">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.789!2d-95.3632!3d29.7604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDQ1JzM3LjQiTiA5NcKwMjEnNDcuNSJX!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="grayscale hover:grayscale-0 transition-all duration-500"></iframe>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-xl shadow-2xl max-w-sm text-center">
-      <i data-lucide="map-pin" class="w-8 h-8 mx-auto text-emerald-600 mb-2"></i>
-      <h3 class="font-bold text-lg">Tino's Landscape</h3>
-      <p class="text-gray-600 text-sm mb-4">Serving the Greater Houston Area</p>
-      <a href="https://maps.google.com/?q=Houston+TX" target="_blank" rel="noreferrer" class="text-emerald-700 font-semibold text-sm hover:underline">Get Directions</a>
-    </div>
-  </section>
+<section class="min-h-screen flex items-center justify-center text-center text-white bg-[url('https://images.unsplash.com/photo-1558905540-21290109218f')] bg-cover bg-center">
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 py-16">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-        <div>
-          <div class="flex items-center gap-2 mb-6">
-            <div class="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white">
-              <i data-lucide="leaf" class="w-5 h-5"></i>
-            </div>
-            <span class="font-bold text-xl text-white">Tino's Landscape</span>
-          </div>
-          <p class="text-gray-400 mb-6">Professional landscaping, outdoor lighting, and construction services. Transforming outdoor spaces into incredible living areas.</p>
-          <div class="flex gap-4">
-            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors text-white">
-              <i data-lucide="facebook" class="w-5 h-5"></i>
-            </a>
-            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors text-white">
-              <i data-lucide="instagram" class="w-5 h-5"></i>
-            </a>
-            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors text-white">
-              <i data-lucide="twitter" class="w-5 h-5"></i>
-            </a>
-          </div>
-        </div>
-        
-        <div>
-          <h4 class="text-white font-bold text-lg mb-6">Services</h4>
-          <ul class="space-y-3">
-            <li><a href="#services" class="hover:text-emerald-400 transition-colors">Landscape Design</a></li>
-            <li><a href="#services" class="hover:text-emerald-400 transition-colors">Paver Installation</a></li>
-            <li><a href="#services" class="hover:text-emerald-400 transition-colors">Outdoor Lighting</a></li>
-            <li><a href="#services" class="hover:text-emerald-400 transition-colors">Lawn Care</a></li>
-            <li><a href="#services" class="hover:text-emerald-400 transition-colors">Hardscaping</a></li>
-            <li><a href="#services" class="hover:text-emerald-400 transition-colors">Outdoor Kitchens</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 class="text-white font-bold text-lg mb-6">Company</h4>
-          <ul class="space-y-3">
-            <li><a href="#" class="hover:text-emerald-400 transition-colors">About Us</a></li>
-            <li><a href="#gallery" class="hover:text-emerald-400 transition-colors">Our Work</a></li>
-            <li><a href="#reviews" class="hover:text-emerald-400 transition-colors">Testimonials</a></li>
-            <li><a href="#" class="hover:text-emerald-400 transition-colors">Careers</a></li>
-            <li><a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 class="text-white font-bold text-lg mb-6">Contact Info</h4>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <i data-lucide="phone" class="w-5 h-5 text-emerald-500 mt-1"></i>
-              <div>
-                <p class="text-white font-medium">+1 (832) 971-3287</p>
-                <p class="text-sm text-gray-500">Mon-Sun: Open 24 Hours</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="map-pin" class="w-5 h-5 text-emerald-500 mt-1"></i>
-              <span>Houston, TX & Surrounding Areas</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-        <p>&copy; 2024 Tino's Landscape, Lighting & Construction. All rights reserved.</p>
-        <div class="flex gap-6">
-          <a href="#" class="hover:text-white">Privacy Policy</a>
-          <a href="#" class="hover:text-white">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+<div class="bg-black/60 p-10 rounded-xl max-w-3xl">
 
-  <!-- Mobile Sticky CTA -->
-  <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 md:hidden z-50 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-    <a href="tel:+18329713287" class="flex-1">
-      <button class="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2">
-        <i data-lucide="phone" class="w-4 h-4"></i> Call Now
-      </button>
-    </a>
-    <a href="#contact" class="flex-1">
-      <button class="w-full border-2 border-emerald-700 text-emerald-800 py-3 rounded-full text-sm font-semibold">
-        Free Estimate
-      </button>
-    </a>
-  </div>
+<h1 class="text-4xl md:text-6xl font-bold mb-6">
+Transform Your Outdoor Space
+</h1>
 
-  <!-- JavaScript -->
-  <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-    
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    const navLogo = document.getElementById('nav-logo');
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.remove('bg-transparent', 'py-5');
-        navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'py-3');
-        navLogo.classList.remove('text-white');
-        navLogo.classList.add('text-gray-900');
-      } else {
-        navbar.classList.add('bg-transparent', 'py-5');
-        navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'py-3');
-        navLogo.classList.add('text-white');
-        navLogo.classList.remove('text-gray-900');
-      }
-    });
-    
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    let isMenuOpen = false;
-    
-    menuToggle.addEventListener('click', () => {
-      isMenuOpen = !isMenuOpen;
-      if (isMenuOpen) {
-        mobileMenu.classList.add('open');
-        menuIcon.setAttribute('data-lucide', 'x');
-      } else {
-        mobileMenu.classList.remove('open');
-        menuIcon.setAttribute('data-lucide', 'menu');
-      }
-      lucide.createIcons();
-    });
-    
-    function closeMenu() {
-      isMenuOpen = false;
-      mobileMenu.classList.remove('open');
-      menuIcon.setAttribute('data-lucide', 'menu');
-      lucide.createIcons();
-    }
-    
-    // Scroll animations
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-    
-    document.querySelectorAll('.fade-in-up').forEach(el => {
-      observer.observe(el);
-    });
-    
-    // Form handling
-    const contactForm = document.getElementById('contact-form');
-    const successMessage = document.getElementById('success-message');
-    const submitBtn = document.getElementById('submit-btn');
-    
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Show loading state
-      submitBtn.innerHTML = '<span>Sending...</span>';
-      submitBtn.disabled = true;
-      
-      // Simulate API call
-      setTimeout(() => {
-        contactForm.classList.add('hidden');
-        successMessage.classList.remove('hidden');
-        lucide.createIcons();
-      }, 1500);
-    });
-    
-    function resetForm() {
-      contactForm.reset();
-      contactForm.classList.remove('hidden');
-      successMessage.classList.add('hidden');
-      submitBtn.innerHTML = '<span>Request Free Estimate</span>';
-      submitBtn.disabled = false;
-    }
-    
-    function scrollToContact() {
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
+<p class="mb-6 text-lg">
+Professional landscaping, lighting, patios and backyard transformations.
+</p>
+
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+
+<a href="tel:+18329713287"
+class="bg-white text-emerald-900 px-6 py-3 rounded-full font-bold">
+Call Now
+</a>
+
+<a href="#contact"
+class="bg-emerald-600 px-6 py-3 rounded-full font-bold">
+Free Estimate
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services" class="py-20 max-w-6xl mx-auto px-6">
+
+<h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="bg-white p-6 rounded-xl shadow fade-in">
+
+<i data-lucide="trees" class="mb-4"></i>
+
+<h3 class="font-bold text-xl mb-2">
+Landscape Design
+</h3>
+
+<p>
+Custom landscaping designed to enhance your home and outdoor living.
+</p>
+
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow fade-in">
+
+<i data-lucide="sun" class="mb-4"></i>
+
+<h3 class="font-bold text-xl mb-2">
+Outdoor Lighting
+</h3>
+
+<p>
+Beautiful lighting that highlights your property and improves security.
+</p>
+
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow fade-in">
+
+<i data-lucide="hammer" class="mb-4"></i>
+
+<h3 class="font-bold text-xl mb-2">
+Patios & Construction
+</h3>
+
+<p>
+Custom patios, walkways, pergolas and outdoor living spaces.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery" class="bg-stone-100 py-20">
+
+<div class="max-w-6xl mx-auto px-6">
+
+<h2 class="text-4xl font-bold text-center mb-12">
+Recent Projects
+</h2>
+
+<div class="grid md:grid-cols-3 gap-4">
+
+<img src="https://images.unsplash.com/photo-1598902108854-10e335adac99"
+class="rounded-xl">
+
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3"
+class="rounded-xl">
+
+<img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6"
+class="rounded-xl">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT FORM -->
+
+<section id="contact" class="py-20 max-w-4xl mx-auto px-6">
+
+<h2 class="text-4xl font-bold text-center mb-10">
+Get a Free Estimate
+</h2>
+
+<form name="lead-form"
+method="POST"
+data-netlify="true"
+netlify-honeypot="bot-field"
+action="/success"
+class="space-y-6 bg-white p-8 rounded-xl shadow">
+
+<input type="hidden" name="form-name" value="lead-form">
+
+<p class="hidden">
+<label>Don't fill this out <input name="bot-field"></label>
+</p>
+
+<input
+type="text"
+name="name"
+placeholder="Full Name"
+required
+class="w-full border p-3 rounded">
+
+<input
+type="tel"
+name="phone"
+placeholder="Phone"
+required
+class="w-full border p-3 rounded">
+
+<input
+type="email"
+name="email"
+placeholder="Email"
+required
+class="w-full border p-3 rounded">
+
+<select name="project-type"
+class="w-full border p-3 rounded">
+
+<option>Landscape Design</option>
+<option>Patio Installation</option>
+<option>Outdoor Lighting</option>
+<option>Backyard Renovation</option>
+
+</select>
+
+<textarea
+name="message"
+placeholder="Tell us about your project"
+rows="4"
+class="w-full border p-3 rounded"></textarea>
+
+<button
+type="submit"
+class="w-full bg-emerald-700 text-white py-4 rounded font-bold">
+
+Request Estimate
+
+</button>
+
+</form>
+
+</section>
+
+
+<footer class="bg-emerald-900 text-white text-center p-6">
+
+© 2026 Tino's Landscape Lighting & Construction
+
+</footer>
+
+
+
+<script>
+
+lucide.createIcons()
+
+
+const menuBtn=document.getElementById("menuBtn")
+const mobileMenu=document.getElementById("mobileMenu")
+
+menuBtn.onclick=()=>{
+mobileMenu.classList.toggle("hidden")
+}
+
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible")
+}
+})
+})
+
+document.querySelectorAll(".fade-in").forEach(el=>{
+observer.observe(el)
+})
+
+</script>
+
+
 </body>
 </html>
